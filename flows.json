@@ -1,0 +1,117 @@
+[
+    {
+        "id": "52a966ef94d2a752",
+        "type": "tab",
+        "label": "流程 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "92fdf2f8c69988c6",
+        "type": "tab",
+        "label": "流程 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a9a33f0e9a62d15b",
+        "type": "http in",
+        "z": "52a966ef94d2a752",
+        "name": "",
+        "url": "/api/test",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "8b8daa16614cd426",
+                "b72a52146dd7910e",
+                "590fde36f60dc3d3"
+            ]
+        ]
+    },
+    {
+        "id": "8b8daa16614cd426",
+        "type": "debug",
+        "z": "52a966ef94d2a752",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b72a52146dd7910e",
+        "type": "function",
+        "z": "52a966ef94d2a752",
+        "name": "function 1",
+        "func": "\nreturn {\n    payload: {\n        data: msg.payload.data,\n        age: 31\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "9b49ef82fb14fa3f",
+                "d897f9b144d45d78"
+            ]
+        ]
+    },
+    {
+        "id": "9b49ef82fb14fa3f",
+        "type": "debug",
+        "z": "52a966ef94d2a752",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d897f9b144d45d78",
+        "type": "file",
+        "z": "52a966ef94d2a752",
+        "name": "",
+        "filename": "/home/kevin/node-red/output/test.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1040,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "590fde36f60dc3d3",
+        "type": "http response",
+        "z": "52a966ef94d2a752",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 600,
+        "y": 600,
+        "wires": []
+    }
+]
